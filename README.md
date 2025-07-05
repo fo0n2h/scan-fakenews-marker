@@ -14,7 +14,8 @@ Voici les marqueurs:
 | Auteur page/photo spécifique    | `/author/nom/` et `/uploads/YYYY/MM/` | Moyen                  |
 | Fonts & classes CSS spécifiques | “Roboto”, “Zilla Slab”, `authorbox56` | Moyen                  |
 | Temps de lecture meta Twitter   | “1 minute” etc.                       | Moyen                  |
-| Nom de l'image                  | “Fbe-1.jpeg” est typique des fichiers téléchargés ou renommés automatiquement, souvent issu de banques d’images
+| Nom de l'image                  | “Fbe-1.jpeg” est typique des fichiers téléchargés ou renommés automatiquement, souvent issu de banques d’images | Moyen |
+| Alt des images | Si null ou uploads_wordpress, pas commun pour un site d'information | FORT |
 
 
 Objectif du code, scanner d'autres sites suspect afin de detecter une potentiel ferme à désinformation.
