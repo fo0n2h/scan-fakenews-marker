@@ -28,4 +28,5 @@ Objectif du code, scanner d'autres sites suspect afin de detecter une potentiel 
 ## TODO
 - format de sortie différent (JSON, CSV) 
 - scan de plusieurs fichiers html d’un dossier
-- whois du domaine pour marqueur creation_date (si inferieur à 6 mois de la présente date, Potentiel FORT
+- whois du domaine pour marqueur creation_date (si inferieur à 6 mois de la présente date, Potentiel FORT)
+- Si vous avez d'autres marqueurs, welcome.
