@@ -1,9 +1,31 @@
 import sys
-from bs4 import BeautifulSoup
-import re
 import os
+import re
+from bs4 import BeautifulSoup
 
-def scan_fake_news_markers(html_path):
+def load_html(input_path):
+    # Détermine si input_path est une URL ou un fichier local
+    if input_path.startswith('http://') or input_path.startswith('https://'):
+        try:
+            import requests
+            resp = requests.get(input_path, headers={'User-Agent': 'Mozilla/5.0'})
+            resp.raise_for_status()
+            html_content = resp.text
+            print(f"[INFO] HTML récupéré depuis l'URL : {input_path}")
+        except Exception as e:
+            print(f"[ERREUR] Impossible de télécharger la page : {e}")
+            sys.exit(1)
+    else:
+        try:
+            with open(input_path, 'r', encoding='utf-8') as f:
+                html_content = f.read()
+            print(f"[INFO] HTML chargé depuis le fichier : {input_path}")
+        except Exception as e:
+            print(f"[ERREUR] Impossible de lire le fichier : {e}")
+            sys.exit(1)
+    return html_content
+
+def scan_fake_news_markers(html_content):
     results = {
         'theme_fox': False,
         'fox_css_files': [],
@@ -16,10 +38,7 @@ def scan_fake_news_markers(html_path):
         'fonts_detected': set(),
         'trackers': [],
     }
-
-    with open(html_path, 'r', encoding='utf-8') as f:
-        html_content = f.read()
-        soup = BeautifulSoup(html_content, 'html.parser')
+    soup = BeautifulSoup(html_content, 'html.parser')
 
     # 1. Cherche les fichiers CSS fox-*
     for link in soup.find_all('link', rel='stylesheet'):
@@ -143,6 +162,9 @@ def scan_fake_news_markers(html_path):
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print("Usage: python scan_fakenews_marker.py [fichier_html]")
+        print("Usage: python scan_fakenews_marker.py [fichier_html|url]")
         sys.exit(1)
-    scan_fake_news_markers(sys.argv[1])
+    input_path = sys.argv[1]
+    html_content = load_html(input_path)
+    scan_fake_news_markers(html_content)
+
