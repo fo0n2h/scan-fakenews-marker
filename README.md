@@ -18,7 +18,7 @@ Voici les marqueurs:
 Objectif du code, scanner d'autres sites suspect afin de detecter une potentiel ferme à désinformation.
 
 ## Install
-`pip install -r requirements.txt` or `pip install beautifulsoup4`
+`pip install -r requirements.txt` or `pip install beautifulsoup4` `pip install requests`
 
 ## Execution:
 `python3 fakenews-marker.py https://fuckingwebsite.fr/xxxxxxx.html`
