@@ -1,5 +1,7 @@
 # scan-fakenews-marker
-Code pondu à l'arrache pour prélever des marqueurs d'un site de fakenews (enquetedujour.fr) signalé par les amis de Streepress.
+Code pondu à l'arrache pour prélever des marqueurs d'un site de fakenews (enquetedujour.fr) signalé par les amis de Streepress. 
+#link https://www.streetpress.com/sujet/1751622076-streetpress-campagne-ingerence-russe-ukraine-fake-news-media-enquete-journalistes-usurpation-identite-brigitte-macron-transidentite-complotisme
+
 Ce site usurpe les journalistes de streetpress pour signer des articles.
 Voici les marqueurs:
 
