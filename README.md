@@ -24,7 +24,7 @@ Objectif du code, scanner d'autres sites suspect afin de detecter une potentiel 
 `pip install -r requirements.txt` or `pip install beautifulsoup4 requests`
 
 ## Execution:
-`python3 fakenews-marker.py https://fuckingwebsite.fr/xxxxxxx.html`
+`python3 fakenews-marker.py https://fuckingwebsite.fr/article/`
 
 ## TODO
 - format de sortie différent (JSON, CSV) 
