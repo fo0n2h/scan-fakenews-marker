@@ -23,3 +23,7 @@ Objectif du code, scanner d'autres sites suspect afin de detecter une potentiel 
 ## Execution:
 `python3 fakenews-marker.py https://fuckingwebsite.fr/xxxxxxx.html`
 
+## TODO
+- format de sortie différent (JSON, CSV) 
+- scan de plusieurs fichiers html d’un dossier
+- whois du domaine pour marqueur creation_date (si inferieur à 6 mois de la présente date, Potentiel FORT
